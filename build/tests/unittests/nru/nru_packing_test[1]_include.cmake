@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/nru/nru_packing_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/nru/nru_packing_test[1]_tests.cmake")
+else()
+  add_test(nru_packing_test_NOT_BUILT nru_packing_test_NOT_BUILT)
+endif()

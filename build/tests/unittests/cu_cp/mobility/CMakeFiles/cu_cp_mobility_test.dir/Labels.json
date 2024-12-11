@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/cu_cp/mobility/handover_reconfiguration_routine_test.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cu_cp"
+		],
+		"name" : "cu_cp_mobility_test"
+	}
+}

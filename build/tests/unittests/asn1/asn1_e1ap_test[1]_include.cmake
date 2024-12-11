@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/asn1/asn1_e1ap_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/asn1/asn1_e1ap_test[1]_tests.cmake")
+else()
+  add_test(asn1_e1ap_test_NOT_BUILT asn1_e1ap_test_NOT_BUILT)
+endif()

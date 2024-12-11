@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/security/ciphering_engine_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/security/ciphering_engine_test[1]_tests.cmake")
+else()
+  add_test(ciphering_engine_test_NOT_BUILT ciphering_engine_test_NOT_BUILT)
+endif()

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsrsgnb_app_f1u_cu_up_split_connector.a CMakeFiles/srsgnb_app_f1u_cu_up_split_connector.dir/cu_up/split_connector/f1u_split_connector_factory.cpp.o CMakeFiles/srsgnb_app_f1u_cu_up_split_connector.dir/cu_up/split_connector/f1u_split_connector.cpp.o
+/usr/bin/ranlib libsrsgnb_app_f1u_cu_up_split_connector.a

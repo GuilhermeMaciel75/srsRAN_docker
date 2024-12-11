@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/phy/support/resource_grid_test.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"phy"
+		],
+		"name" : "resource_grid_test"
+	}
+}

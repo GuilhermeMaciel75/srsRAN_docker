@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/pcap/rlc_pcap_test.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"pcap"
+		],
+		"name" : "pcap_rlc_test"
+	}
+}

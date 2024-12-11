@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/f1ap/common/f1ap_asn1_packer_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/f1ap/common/f1ap_asn1_packer_test[1]_tests.cmake")
+else()
+  add_test(f1ap_asn1_packer_test_NOT_BUILT f1ap_asn1_packer_test_NOT_BUILT)
+endif()

@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/cu_up/pdu_session_manager_test.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cu_up"
+		],
+		"name" : "pdu_session_manager_test"
+	}
+}

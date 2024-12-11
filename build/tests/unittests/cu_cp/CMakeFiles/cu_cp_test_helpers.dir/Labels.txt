@@ -1,0 +1,10 @@
+# Directory labels
+ cu_cp
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/cu_cp/test_doubles/mock_cu_up.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/cu_cp/test_doubles/mock_amf.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/cu_cp/test_doubles/mock_du.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/cu_cp/cu_cp_test_environment.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/cu_cp/cu_cp_test_messages.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/cu_cp/du_processor_test_messages.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/cu_cp/test_helpers.cpp

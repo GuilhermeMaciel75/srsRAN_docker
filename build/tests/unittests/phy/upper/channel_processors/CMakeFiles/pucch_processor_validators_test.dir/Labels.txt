@@ -1,0 +1,6 @@
+# Directory labels
+ phy
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/phy/upper/channel_processors/pucch_processor_validator_format0_test.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/phy/upper/channel_processors/pucch_processor_validator_format1_test.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/phy/upper/channel_processors/pucch_processor_validator_format2_test.cpp

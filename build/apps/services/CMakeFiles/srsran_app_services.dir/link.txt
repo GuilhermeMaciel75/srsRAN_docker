@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsrsran_app_services.a CMakeFiles/srsran_app_services.dir/stdin_command_dispatcher.cpp.o CMakeFiles/srsran_app_services.dir/worker_manager.cpp.o
+/usr/bin/ranlib libsrsran_app_services.a

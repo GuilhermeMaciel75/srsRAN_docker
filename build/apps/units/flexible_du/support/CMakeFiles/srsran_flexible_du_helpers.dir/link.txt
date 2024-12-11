@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsrsran_flexible_du_helpers.a CMakeFiles/srsran_flexible_du_helpers.dir/cli11_cpu_affinities_parser_helper.cpp.o
+/usr/bin/ranlib libsrsran_flexible_du_helpers.a

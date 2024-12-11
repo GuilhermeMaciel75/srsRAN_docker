@@ -1,0 +1,5 @@
+# Directory labels
+ support
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/support/async_event_observer_test.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/support/protocol_transaction_manager_test.cpp

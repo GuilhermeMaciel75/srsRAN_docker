@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi/validators/dl_tti_request_validator_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi/validators/dl_tti_request_validator_test[1]_tests.cmake")
+else()
+  add_test(dl_tti_request_validator_test_NOT_BUILT dl_tti_request_validator_test_NOT_BUILT)
+endif()

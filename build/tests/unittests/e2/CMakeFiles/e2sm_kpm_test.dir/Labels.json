@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/e2/e2sm_kpm_test.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"e2ap"
+		],
+		"name" : "e2sm_kpm_test"
+	}
+}

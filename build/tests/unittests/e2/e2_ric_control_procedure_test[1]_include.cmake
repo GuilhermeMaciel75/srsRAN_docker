@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/e2/e2_ric_control_procedure_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/e2/e2_ric_control_procedure_test[1]_tests.cmake")
+else()
+  add_test(e2_ric_control_procedure_test_NOT_BUILT e2_ric_control_procedure_test_NOT_BUILT)
+endif()

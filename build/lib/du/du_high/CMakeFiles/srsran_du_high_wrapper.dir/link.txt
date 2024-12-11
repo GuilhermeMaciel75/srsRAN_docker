@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsrsran_du_high_wrapper.a CMakeFiles/srsran_du_high_wrapper.dir/du_high_wrapper_factory.cpp.o CMakeFiles/srsran_du_high_wrapper.dir/du_high_wrapper_impl.cpp.o
+/usr/bin/ranlib libsrsran_du_high_wrapper.a

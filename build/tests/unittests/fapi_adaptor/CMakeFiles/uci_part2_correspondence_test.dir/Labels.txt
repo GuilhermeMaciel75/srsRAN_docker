@@ -1,0 +1,4 @@
+# Directory labels
+ fapi_adaptor
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/fapi_adaptor/uci_part2_correspondence_test.cpp

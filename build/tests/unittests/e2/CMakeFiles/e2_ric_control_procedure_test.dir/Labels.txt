@@ -1,0 +1,4 @@
+# Directory labels
+ e2ap
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/e2/e2_ric_control_procedure_test.cpp

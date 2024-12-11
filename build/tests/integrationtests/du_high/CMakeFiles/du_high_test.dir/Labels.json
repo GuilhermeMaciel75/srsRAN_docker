@@ -1,0 +1,29 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/integrationtests/du_high/du_high_test.cpp"
+		},
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/integrationtests/du_high/du_high_many_ues_test.cpp"
+		},
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/integrationtests/du_high/du_high_many_cells_test.cpp"
+		},
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/integrationtests/du_high/paging_test.cpp"
+		},
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/integrationtests/du_high/test_utils/du_high_env_simulator.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"du_high",
+			"integrationtest"
+		],
+		"name" : "du_high_test"
+	}
+}

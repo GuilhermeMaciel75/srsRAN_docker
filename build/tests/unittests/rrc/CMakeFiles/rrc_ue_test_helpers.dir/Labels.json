@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/rrc/rrc_ue_test_messages.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"rrc"
+		],
+		"name" : "rrc_ue_test_helpers"
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/psup/psup_packing_test.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"psup"
+		],
+		"name" : "psup_packing_test"
+	}
+}

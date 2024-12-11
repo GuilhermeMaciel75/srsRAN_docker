@@ -1,0 +1,36 @@
+cu_cp:
+  amf:
+    addr: 10.53.1.2                 # The address or hostname of the AMF.
+    port: 38412
+    bind_addr: 10.53.1.6            # A local IP that the gNB binds to for traffic from the AMF.
+    supported_tracking_areas:
+      - tac: 7
+        plmn_list:
+          - plmn: "00101"
+            tai_slice_support_list:
+              - sst: 1
+  inactivity_timer: 7200            # Sets the UE/PDU Session/DRB inactivity timer to 7200 seconds. Supported: [1 - 7200].
+
+  f1ap:
+    bind_addr: 10.54.1.2                                         # Configure the F1AP bind address, this will enable the CU-cp to connect to the DU
+
+cu_up:
+  nru:
+    bind_addr: 10.54.1.2 
+
+log:
+  filename: /tmp/cu.log
+  all_level: info
+
+pcap:
+  #e2ap_enable: true
+  ngap_enable: false
+  ngap_filename: /tmp/cu_ngap.pcap
+
+e2:
+    #e2sm_kpm_enabled: true            # Enable KPM service module
+    #e2sm_rc_enabled: true             # Enable KPM service module
+  addr: 10.0.2.10                   # RIC IP address
+  bind_addr: 10.0.2.1               # A local IP that the E2 agent binds to for traffic from the RIC. ONLY required if running the RIC on a separate machine. 
+  port: 36421                       # RIC port
+    #enable_cu_e2: true                # Enable DU E2 agent (one for each DU instance)

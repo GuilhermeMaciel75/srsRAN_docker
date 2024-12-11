@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/scheduler/uci_and_pucch/uci_pucch_sched_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/scheduler/uci_and_pucch/uci_pucch_sched_test[1]_tests.cmake")
+else()
+  add_test(uci_pucch_sched_test_NOT_BUILT uci_pucch_sched_test_NOT_BUILT)
+endif()

@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/psup/psup_packing_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/psup/psup_packing_test[1]_tests.cmake")
+else()
+  add_test(psup_packing_test_NOT_BUILT psup_packing_test_NOT_BUILT)
+endif()

@@ -1,0 +1,4 @@
+# Directory labels
+ pcap
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/pcap/rlc_pcap_test.cpp

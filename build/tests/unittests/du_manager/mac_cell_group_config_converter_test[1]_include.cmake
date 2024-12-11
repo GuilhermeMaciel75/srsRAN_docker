@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/du_manager/mac_cell_group_config_converter_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/du_manager/mac_cell_group_config_converter_test[1]_tests.cmake")
+else()
+  add_test(mac_cell_group_config_converter_test_NOT_BUILT mac_cell_group_config_converter_test_NOT_BUILT)
+endif()

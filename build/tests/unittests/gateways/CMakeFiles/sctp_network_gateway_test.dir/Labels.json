@@ -1,0 +1,25 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/gateways/sctp_network_server_test.cpp"
+		},
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/gateways/sctp_network_client_test.cpp"
+		},
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/gateways/sctp_network_gateway_test.cpp"
+		},
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/gateways/sctp_network_link_test.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"gateways"
+		],
+		"name" : "sctp_network_gateway_test"
+	}
+}

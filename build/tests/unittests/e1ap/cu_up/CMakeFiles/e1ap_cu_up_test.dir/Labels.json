@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/e1ap/cu_up/e1ap_cu_up_test.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"e1ap"
+		],
+		"name" : "e1ap_cu_up_test"
+	}
+}

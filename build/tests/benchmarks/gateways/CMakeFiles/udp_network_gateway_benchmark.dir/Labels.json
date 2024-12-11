@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/benchmarks/gateways/udp_network_gateway_benchmark.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"gateways"
+		],
+		"name" : "udp_network_gateway_benchmark"
+	}
+}

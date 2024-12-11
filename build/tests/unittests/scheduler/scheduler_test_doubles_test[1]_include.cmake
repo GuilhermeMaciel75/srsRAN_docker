@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/scheduler/scheduler_test_doubles_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/scheduler/scheduler_test_doubles_test[1]_tests.cmake")
+else()
+  add_test(scheduler_test_doubles_test_NOT_BUILT scheduler_test_doubles_test_NOT_BUILT)
+endif()

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsrsran_du_low_wrapper.a CMakeFiles/srsran_du_low_wrapper.dir/du_low_factory.cpp.o CMakeFiles/srsran_du_low_wrapper.dir/du_low_impl.cpp.o CMakeFiles/srsran_du_low_wrapper.dir/du_low_wrapper_factory.cpp.o CMakeFiles/srsran_du_low_wrapper.dir/du_low_wrapper_impl.cpp.o
+/usr/bin/ranlib libsrsran_du_low_wrapper.a

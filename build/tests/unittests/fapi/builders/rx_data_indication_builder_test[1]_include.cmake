@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi/builders/rx_data_indication_builder_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi/builders/rx_data_indication_builder_test[1]_tests.cmake")
+else()
+  add_test(rx_data_indication_builder_test_NOT_BUILT rx_data_indication_builder_test_NOT_BUILT)
+endif()

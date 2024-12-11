@@ -1,0 +1,4 @@
+# Directory labels
+ pdcp
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/pdcp/pdcp_gen_helper.cpp

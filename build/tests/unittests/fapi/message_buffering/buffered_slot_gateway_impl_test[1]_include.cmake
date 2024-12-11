@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi/message_buffering/buffered_slot_gateway_impl_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi/message_buffering/buffered_slot_gateway_impl_test[1]_tests.cmake")
+else()
+  add_test(buffered_slot_gateway_impl_test_NOT_BUILT buffered_slot_gateway_impl_test_NOT_BUILT)
+endif()

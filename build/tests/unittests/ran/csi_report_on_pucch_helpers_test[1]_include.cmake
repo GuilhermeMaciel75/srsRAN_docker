@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/ran/csi_report_on_pucch_helpers_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/ran/csi_report_on_pucch_helpers_test[1]_tests.cmake")
+else()
+  add_test(csi_report_on_pucch_helpers_test_NOT_BUILT csi_report_on_pucch_helpers_test_NOT_BUILT)
+endif()

@@ -1,0 +1,4 @@
+# Directory labels
+ ran
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/ran/cell_identity_test.cpp

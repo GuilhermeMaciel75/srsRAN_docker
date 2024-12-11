@@ -1,0 +1,4 @@
+# Directory labels
+ fapi
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/fapi/validators/ul_pusch_pdu_test.cpp

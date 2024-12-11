@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/cu_cp/cu_up_processor/cu_up_processor_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/cu_cp/cu_up_processor/cu_up_processor_test[1]_tests.cmake")
+else()
+  add_test(cu_up_processor_test_NOT_BUILT cu_up_processor_test_NOT_BUILT)
+endif()

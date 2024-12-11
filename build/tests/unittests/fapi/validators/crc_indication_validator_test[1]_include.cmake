@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi/validators/crc_indication_validator_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi/validators/crc_indication_validator_test[1]_tests.cmake")
+else()
+  add_test(crc_indication_validator_test_NOT_BUILT crc_indication_validator_test_NOT_BUILT)
+endif()

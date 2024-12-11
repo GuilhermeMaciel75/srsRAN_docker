@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/integrationtests/phy/upper/channel_processors/pxsch_chain_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/integrationtests/phy/upper/channel_processors/pxsch_chain_test[1]_tests.cmake")
+else()
+  add_test(pxsch_chain_test_NOT_BUILT pxsch_chain_test_NOT_BUILT)
+endif()

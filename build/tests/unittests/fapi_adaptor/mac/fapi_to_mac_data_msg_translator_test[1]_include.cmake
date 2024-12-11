@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi_adaptor/mac/fapi_to_mac_data_msg_translator_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi_adaptor/mac/fapi_to_mac_data_msg_translator_test[1]_tests.cmake")
+else()
+  add_test(fapi_to_mac_data_msg_translator_test_NOT_BUILT fapi_to_mac_data_msg_translator_test_NOT_BUILT)
+endif()

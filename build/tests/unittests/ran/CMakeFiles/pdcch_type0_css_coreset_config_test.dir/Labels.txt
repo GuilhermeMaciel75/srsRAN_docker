@@ -1,0 +1,4 @@
+# Directory labels
+ ran
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/ran/pdcch/pdcch_type0_css_coreset_config_test.cpp

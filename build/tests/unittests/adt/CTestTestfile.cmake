@@ -1,0 +1,37 @@
+# CMake generated Testfile for 
+# Source directory: /home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt
+# Build directory: /home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/adt
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/adt/byte_buffer_test[1]_include.cmake")
+include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/adt/ring_buffer_test[1]_include.cmake")
+include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/adt/circular_map_test_alt[1]_include.cmake")
+include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/adt/bounded_integer_test[1]_include.cmake")
+add_test(bounded_bitset_test "bounded_bitset_test")
+set_tests_properties(bounded_bitset_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;25;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(interval_test "interval_test")
+set_tests_properties(interval_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;29;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(byte_buffer_test "byte_buffer_test")
+set_tests_properties(byte_buffer_test PROPERTIES  LABELS "tsan" _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;36;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(ring_buffer_test "ring_buffer_test")
+set_tests_properties(ring_buffer_test PROPERTIES  LABELS "tsan" _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;42;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(circular_map_test "circular_map_test")
+set_tests_properties(circular_map_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;48;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(expected_test "expected_test")
+set_tests_properties(expected_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;56;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(tiny_optional_test "tiny_optional_test")
+set_tests_properties(tiny_optional_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;60;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(slotted_array_test "slotted_array_test")
+set_tests_properties(slotted_array_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;64;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(span_formatter_test "span_formatter_test")
+set_tests_properties(span_formatter_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;68;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(static_vector_test "static_vector_test")
+set_tests_properties(static_vector_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;72;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(unique_function_test "unique_function_test")
+set_tests_properties(unique_function_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;76;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(filter_view_test "filter_view_test")
+set_tests_properties(filter_view_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;80;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+add_test(strong_type_test "strong_type_test")
+set_tests_properties(strong_type_test PROPERTIES  _BACKTRACE_TRIPLES "/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;84;add_test;/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/unittests/adt/CMakeLists.txt;0;")
+set_directory_properties(PROPERTIES LABELS "adt")

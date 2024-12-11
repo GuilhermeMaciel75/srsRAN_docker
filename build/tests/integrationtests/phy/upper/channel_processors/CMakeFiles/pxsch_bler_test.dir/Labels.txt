@@ -1,0 +1,8 @@
+# Directory labels
+ phy
+ tsan
+ NO_MEMCHECK
+# Source files and their labels
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/integrationtests/phy/upper/channel_processors/pxsch_bler_test.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/integrationtests/phy/upper/channel_processors/pxsch_bler_test_channel_emulator.cpp
+/home/oiran/srsran_split/srsRAN_Project-release_24_10/tests/integrationtests/phy/upper/channel_processors/pxsch_bler_test_factories.cpp

@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/phy/upper/upper_phy_rx_symbol_handler_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/phy/upper/upper_phy_rx_symbol_handler_test[1]_tests.cmake")
+else()
+  add_test(upper_phy_rx_symbol_handler_test_NOT_BUILT upper_phy_rx_symbol_handler_test_NOT_BUILT)
+endif()

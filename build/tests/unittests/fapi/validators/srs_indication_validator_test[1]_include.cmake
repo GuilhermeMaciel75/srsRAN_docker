@@ -1,0 +1,5 @@
+if(EXISTS "/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi/validators/srs_indication_validator_test[1]_tests.cmake")
+  include("/home/oiran/srsran_split/srsRAN_Project-release_24_10/build/tests/unittests/fapi/validators/srs_indication_validator_test[1]_tests.cmake")
+else()
+  add_test(srs_indication_validator_test_NOT_BUILT srs_indication_validator_test_NOT_BUILT)
+endif()

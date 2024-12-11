@@ -1,0 +1,37 @@
+# CMake generated Testfile for 
+# Source directory: /home/oiran/srsran_split/srsRAN_Project-release_24_10/lib
+# Build directory: /home/oiran/srsran_split/srsRAN_Project-release_24_10/build/lib
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+subdirs("asn1")
+subdirs("cu_cp")
+subdirs("cu_up")
+subdirs("du")
+subdirs("e1ap")
+subdirs("e2")
+subdirs("f1ap")
+subdirs("f1u")
+subdirs("fapi")
+subdirs("fapi_adaptor")
+subdirs("gateways")
+subdirs("gtpu")
+subdirs("instrumentation")
+subdirs("mac")
+subdirs("ngap")
+subdirs("nru")
+subdirs("pcap")
+subdirs("pdcp")
+subdirs("phy")
+subdirs("psup")
+subdirs("radio")
+subdirs("ran")
+subdirs("rlc")
+subdirs("rrc")
+subdirs("ru")
+subdirs("scheduler")
+subdirs("sdap")
+subdirs("security")
+subdirs("srslog")
+subdirs("srsvec")
+subdirs("support")
