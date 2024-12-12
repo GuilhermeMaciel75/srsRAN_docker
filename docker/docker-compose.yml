@@ -152,6 +152,8 @@ services:
       - "38472:38472/sctp"
       - "2152:2152"
 
+    #command: sh -c "tail -f ../tmp/cu.log"
+
     networks:
       ran:
         ipv4_address: 10.53.1.6

@@ -8,10 +8,14 @@ RUN apt-get clean && apt-get update && \
     apt-get update -y && \
     rm -rf /var/lib/apt/lists/*
 
+
+RUN touch /tmp/cu.log
+
 WORKDIR /cu
 COPY . ./
 
 RUN chmod +x /cu/srscu
 RUN ls -al /cu # Verifique se o arquivo srscu está no contêiner
 
-ENTRYPOINT ["/cu/srscu", "-c", "cu.yml"]
+CMD ["/bin/bash", "-c", "/cu/srscu -c cu.yml & tail -f /tmp/cu.log"]
+#CMD ["/bin/sh", "-c", "/cu/srscu -c cu.yml"]
