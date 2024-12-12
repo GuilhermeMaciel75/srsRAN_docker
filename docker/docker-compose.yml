@@ -152,8 +152,6 @@ services:
       - "38472:38472/sctp"
       - "2152:2152"
 
-    #command: sh -c "tail -f ../tmp/cu.log"
-
     networks:
       ran:
         ipv4_address: 10.53.1.6
@@ -161,8 +159,56 @@ services:
       f1:
         ipv4_address: 10.54.1.2
 
-        #aliases:
-        #  - 10.53.1.7  # Alias adicional
+    environment:
+      AMF_ADDR: "10.53.1.2"
+      CU_CP_BIND_ADDR: "10.53.1.6"
+      F1_BIND_ADDR: "10.54.1.2"
+
+  cu2:
+    container_name: oran_cu2
+    build:
+      context: cu
+      target: cu
+      args:
+        OS_VERSION: "24.04"
+    privileged: true
+    ports:
+      - "38413:38412"
+      - "38473:38472/sctp"
+      - "2153:2152"
+    networks:
+      ran:
+        ipv4_address: 10.53.1.7
+      f1:
+        ipv4_address: 10.54.1.3
+
+    environment:
+      AMF_ADDR: "10.53.1.2"
+      CU_CP_BIND_ADDR: "10.53.1.7"
+      F1_BIND_ADDR: "10.54.1.3"
+
+  cu3:
+    container_name: oran_cu3
+    build:
+      context: cu
+      target: cu
+      args:
+        OS_VERSION: "24.04"
+    privileged: true
+    ports:
+      - "38414:38412"
+      - "38474:38472/sctp"
+      - "2154:2152"
+    networks:
+      ran:
+        ipv4_address: 10.53.1.8
+      f1:
+        ipv4_address: 10.54.1.4
+
+    environment:
+      AMF_ADDR: "10.53.1.2"
+      CU_CP_BIND_ADDR: "10.53.1.8"
+      F1_BIND_ADDR: "10.54.1.4"
   
   du:
     container_name: oran_du
@@ -179,16 +225,51 @@ services:
 
     networks:
       ran:
-        ipv4_address: 10.53.1.8
+        ipv4_address: 10.53.1.9
 
       oran-sc-ric_ric_network:
         ipv4_address: 10.0.2.3
 
       f1:
-        ipv4_address: 10.54.1.3
+        ipv4_address: 10.54.1.5
 
-    #extra_hosts:
-    #- "host.docker.internal:host-gateway"
+    environment:
+      F1AP_CU_CP_ADDR: "10.54.1.2"
+      F1AP_BIND_ADDR: "10.54.1.5"
+      RU_SDR_TX_PORT: "10.53.1.9"
+      RU_SDR_RX_PORT: "172.17.0.1"
+      E2_BIND_ADDR: "10.0.2.3"
+
+  du2:
+    container_name: oran_du2
+    build:
+      context: du
+      target: du
+      args:
+        OS_VERSION: "24.04"
+
+    privileged: true
+    ports:
+      - "36422:36421"
+      - "3000:2000"
+
+    networks:
+      ran:
+        ipv4_address: 10.53.1.10
+
+      oran-sc-ric_ric_network:
+        ipv4_address: 10.0.2.4
+
+      f1:
+        ipv4_address: 10.54.1.6
+
+    environment:
+      F1AP_CU_CP_ADDR: "10.54.1.3"
+      F1AP_BIND_ADDR: "10.54.1.6"
+      RU_SDR_TX_PORT: "10.53.1.10"
+      RU_SDR_RX_PORT: "172.17.0.1"
+      E2_BIND_ADDR: "10.0.2.4"
+      GNB_ID : "2"
 
 configs:
   gnb_config.yml:

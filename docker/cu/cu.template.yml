@@ -1,0 +1,32 @@
+cu_cp:
+  amf:
+    addr: $AMF_ADDR
+    port: 38412
+    bind_addr: $CU_CP_BIND_ADDR
+    supported_tracking_areas:
+      - tac: 7
+        plmn_list:
+          - plmn: "00101"
+            tai_slice_support_list:
+              - sst: 1
+  inactivity_timer: 7200
+
+  f1ap:
+    bind_addr: $F1_BIND_ADDR
+
+cu_up:
+  nru:
+    bind_addr: $F1_BIND_ADDR
+
+log:
+  filename: /tmp/cu.log
+  all_level: info
+
+pcap:
+  ngap_enable: false
+  ngap_filename: /tmp/cu_ngap.pcap
+
+e2:
+  addr: 10.0.2.10
+  bind_addr: 10.0.2.1
+  port: 36421
