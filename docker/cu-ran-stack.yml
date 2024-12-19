@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  cu:
+    image: guilhermemaciel75/uc:v0.0.9
+    ports:
+      - "38412:38412"
+      - "38472:38472/sctp"
+      - "2152:2152"
+    networks:
+      ran:
+        aliases:
+          - cu_ran
+      f1:
+        aliases:
+          - cu_f1
+    environment:
+      AMF_ADDR: "10.53.1.2"
+      CU_CP_BIND_ADDR: "0.0.0.0"
+      F1_BIND_ADDR: "0.0.0.0"
+    deploy:
+      replicas: 4
+      restart_policy:
+        condition: on-failure
+
+networks:
+  ran:
+    external: true
+    name: "docker_ran"
+
+  f1:
+    external: true
+    name: "docker_f1"

@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:  
+  du:
+    image: guilhermemaciel75/ud:v0.0.3
+    ports:
+      - "36421:36421"
+      - "2000:2000"
+
+    networks:
+      ran:
+        aliases:
+          - du_ran
+      f1:
+        aliases:
+          - du_f1
+
+      oran-sc-ric_ric_network:
+        aliases:
+          - ric_network
+
+    environment:
+      E2_BIND_ADDR: "0.0.0.0" 
+      F1AP_BIND_ADDR: "0.0.0.0"
+      RU_SDR_TX_PORT: "0.0.0.0"
+      RU_SDR_RX_PORT: "172.17.0.1" # IP DO PC # FIXO
+      F1AP_CU_CP_ADDR: "cu_f1" # GET DA CU # NÃO É FIXO MAS PRECISA SER ACESSADO
+      GNB_ID : "{{.Task.Slot}}"
+         
+
+    deploy:
+      replicas: 4
+      restart_policy:
+        condition: on-failure
+
+networks:
+  ran:
+    external: true
+    name: "docker_ran"
+
+  f1:
+    external: true
+    name: "docker_f1"
+
+  oran-sc-ric_ric_network:
+    external: true
