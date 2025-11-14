@@ -2,11 +2,7 @@ version: "3.8"
 
 services:
   cu:
-    image: guilhermemaciel75/uc:v0.0.9
-    ports:
-      - "38412:38412"
-      - "38472:38472/sctp"
-      - "2152:2152"
+    image: guilhermemaciel75/uc:v0.0.10
     networks:
       ran:
         aliases:
@@ -19,7 +15,8 @@ services:
       CU_CP_BIND_ADDR: "0.0.0.0"
       F1_BIND_ADDR: "0.0.0.0"
     deploy:
-      replicas: 4
+      replicas: 1
+      endpoint_mode: dnsrr
       restart_policy:
         condition: on-failure
 

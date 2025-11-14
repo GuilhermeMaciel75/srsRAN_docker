@@ -15,7 +15,6 @@ WORKDIR /cu
 COPY . ./
 
 RUN chmod +x /cu/srscu
-RUN chmod +x /cu/cu_entrypoint.sh
 
 CMD ["/bin/sh", "-c", "CU_RAN_IP=$(ip addr show dev eth1 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1) && CU_F1_IP=$(ip addr show dev eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1) && export CU_CP_BIND_ADDR=$CU_RAN_IP && export F1_BIND_ADDR=$CU_F1_IP && envsubst < /cu/cu.template.yml > /cu/cu.yml && /cu/srscu -c /cu/cu.yml & tail -f /tmp/cu.log"]
 #CMD ["/bin/sh", "-c", "envsubst < /cu/cu.template.yml > /cu/cu.yml && /cu/srscu -c /cu/cu.yml & tail -f /tmp/cu.log"]

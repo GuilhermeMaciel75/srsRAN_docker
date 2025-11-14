@@ -227,8 +227,8 @@ services:
       ran:
         ipv4_address: 10.53.1.9
 
-      oran-sc-ric_ric_network:
-        ipv4_address: 10.0.2.3
+      #oran-sc-ric_ric_network:
+      #  ipv4_address: 10.0.2.3
 
       f1:
         ipv4_address: 10.54.1.5
@@ -257,8 +257,8 @@ services:
       ran:
         ipv4_address: 10.53.1.10
 
-      oran-sc-ric_ric_network:
-        ipv4_address: 10.0.2.4
+      #oran-sc-ric_ric_network:
+      #  ipv4_address: 10.0.2.4
 
       f1:
         ipv4_address: 10.54.1.6
@@ -303,5 +303,5 @@ networks:
         - subnet: 10.54.1.0/24
 
 
-  oran-sc-ric_ric_network:
-    external: true  # Agora a rede externa é configurada aqui, fora dos serviços
+  #oran-sc-ric_ric_network:
+  #  external: true  # Agora a rede externa é configurada aqui, fora dos serviços

@@ -27,6 +27,7 @@ pcap:
   ngap_filename: /tmp/cu_ngap.pcap
 
 e2:
-  addr: 10.0.2.10
-  bind_addr: 10.0.2.1
+  enable_cu_e2: false
+  addr: 127.0.0.1
   port: 36421
+  bind_addr: 127.0.0.1

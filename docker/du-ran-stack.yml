@@ -1,11 +1,21 @@
 version: "3.8"
+networks:
+  oran-sc-ric_ric_network:
+    external: true
+    name: oran-sc-ric_ric_network
 
 services:  
   du:
-    image: guilhermemaciel75/ud:v0.0.3
+    image: guilhermemaciel75/ud:v0.0.11-metrics
     ports:
-      - "36421:36421"
-      - "2000:2000"
+      - target: 36421
+        published: 36421
+        protocol: tcp
+        mode: host
+      - target: 2000
+        published: 2000
+        protocol: tcp
+        mode: host
 
     networks:
       ran:
@@ -14,22 +24,21 @@ services:
       f1:
         aliases:
           - du_f1
-
-      oran-sc-ric_ric_network:
-        aliases:
-          - ric_network
+      #oran-sc-ric_ric_network:
+      #  aliases:
+      #    - ric_network
 
     environment:
       E2_BIND_ADDR: "0.0.0.0" 
       F1AP_BIND_ADDR: "0.0.0.0"
-      RU_SDR_TX_PORT: "0.0.0.0"
-      RU_SDR_RX_PORT: "172.17.0.1" # IP DO PC # FIXO
-      F1AP_CU_CP_ADDR: "cu_f1" # GET DA CU # NÃO É FIXO MAS PRECISA SER ACESSADO
-      GNB_ID : "{{.Task.Slot}}"
+      RU_SDR_TX_PORT: "10.45.0.1"
+      RU_SDR_RX_PORT: "10.45.0.1"
+      F1AP_CU_CP_ADDR: "oran_cu_cu"
+      GNB_ID : "1"
          
 
     deploy:
-      replicas: 4
+      replicas: 1
       restart_policy:
         condition: on-failure
 
@@ -42,5 +51,7 @@ networks:
     external: true
     name: "docker_f1"
 
-  oran-sc-ric_ric_network:
-    external: true
+  #oran-sc-ric_ric_network:
+  #  external: true
+  #  name: "oran-sc-ric_ric_network"
+
