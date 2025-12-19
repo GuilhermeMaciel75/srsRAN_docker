@@ -19,7 +19,7 @@ cu_up:
     bind_addr: $F1_BIND_ADDR
 
 log:
-  filename: /tmp/cu.log
+  filename: stdout
   all_level: info
 
 pcap:
