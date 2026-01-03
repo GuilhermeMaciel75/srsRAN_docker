@@ -1,15 +1,52 @@
-# 🚀 Quickstart: Simulador de Falha e Recuperação CU
+# 🚀 Quickstart: Simuladores de Falha e Recuperação CU
 
-## Execução Rápida
+## 📌 Dois Modos Disponíveis
+
+### 1️⃣ Modo Básico (sem UE)
+Teste rápido de resiliência da infraestrutura CU/DU.
 
 ```bash
 cd /home/guilhermemaciel/Documentos/srsRAN/srsRAN_split/docker/teste_resiliencia
 ./simular_falha_cu.sh
 ```
 
-## O que acontece?
+### 2️⃣ Modo Completo (com UE) - **Recomendado** 🔥
+Teste end-to-end incluindo UE real com validação de conectividade.
 
-### ⏱️ Cronograma (Total: ~2-3 minutos)
+```bash
+cd /home/guilhermemaciel/Documentos/srsRAN/srsRAN_split/docker/teste_resiliencia
+sudo ./simular_falha_cu_com_ue.sh
+```
+
+**⚠️ Nota:** O modo com UE requer privilégios root e srsRAN 4G compilado.
+
+---
+
+## ✅ Pré-requisitos
+
+### Para Modo Básico
+- Docker instalado e rodando
+- Docker Swarm inicializado
+
+### Para Modo Completo (adicionais)
+- **srsRAN 4G** compilado em: `/home/guilhermemaciel/Documentos/srsRAN/srsRAN_4G/build/srsue/src/srsue`
+- Privilégios **root/sudo**
+
+**Compilar srsRAN 4G (se necessário):**
+```bash
+cd /home/guilhermemaciel/Documentos/srsRAN/
+git clone https://github.com/srsran/srsRAN_4G.git
+cd srsRAN_4G
+mkdir build && cd build
+cmake ../
+make -j$(nproc)
+```
+
+---
+
+## ⏱️ Cronogramas
+
+### Modo Básico (~2-3 minutos)
 
 ```
 00:00 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Início
@@ -35,6 +72,44 @@ cd /home/guilhermemaciel/Documentos/srsRAN/srsRAN_split/docker/teste_resiliencia
   └─ [02s]  📊 Relatório Final
      │
 02:30 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Fim
+```
+
+### Modo Completo com UE (~3-4 minutos)
+
+```
+00:00 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Início
+  │
+  ├─ [10s]  🧹 Limpeza: Remove CU, DU e namespace UE
+  │
+  ├─ [15s]  🌐 Core: Verifica/Inicia Open5GS
+  │
+  ├─ [15s]  📡 CU Up: Deploy + Conexão AMF
+  │
+  ├─ [15s]  📡 DU Up: Deploy + F1 Setup
+  │
+  ├─ [05s]  🔧 Setup: Namespace + veth pair
+  │
+  ├─ [20s]  📱 UE Connect: srsUE attach + PDU session
+  │
+  ├─ [05s]  🏓 Ping #1: Teste baseline (UE → Core)
+  │
+  ├─ [10s]  ✅ Infraestrutura Estável
+  │
+  ├─ [--]   💥 SIMULAÇÃO DE FALHA (kill CU)
+  │
+  ├─ [15s]  ♻️  Auto Recovery: Swarm recria CU
+  │
+  ├─ [15s]  🔄 Restart DU: Reconexão F1
+  │
+  ├─ [20s]  📱 UE Reconnect: Novo attach
+  │
+  ├─ [05s]  🏓 Ping #2: Validação pós-recuperação
+  │
+  ├─ [05s]  ✔️  Validação de Conexões
+  │
+  └─ [02s]  📊 Relatório Final
+     │
+03:30 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Fim
 ```
 
 ## Saída do Script
@@ -182,10 +257,202 @@ docker-compose down
 
 Após o teste bem-sucedido, você pode:
 
-1. **Conectar um UE real** usando o script `resilience_test_v3.sh`
+1. **Conectar um UE real** usando `simular_falha_cu_com_ue.sh` (✨ Novo!)
 2. **Monitorar métricas** no Grafana (porta 3000)
 3. **Testar múltiplas falhas** executando o script repetidamente
 4. **Automatizar** agendando com cron para testes periódicos
+
+---
+
+## 🔥 Modo Completo com UE - Guia Detalhado
+
+### Pré-requisitos Adicionais
+
+```bash
+# 1. Verificar se srsUE existe
+ls -lh /home/guilhermemaciel/Documentos/srsRAN/srsRAN_4G/build/srsue/src/srsue
+
+# 2. Se não existir, compilar srsRAN 4G
+cd /home/guilhermemaciel/Documentos/srsRAN/
+git clone https://github.com/srsran/srsRAN_4G.git
+cd srsRAN_4G
+mkdir build && cd build
+cmake ../
+make -j$(nproc)
+```
+
+### Execução
+
+```bash
+cd /home/guilhermemaciel/Documentos/srsRAN/srsRAN_split/docker/teste_resiliencia
+sudo ./simular_falha_cu_com_ue.sh
+```
+
+### O Que É Diferente?
+
+O script com UE adiciona:
+
+1. ✅ **Namespace de rede isolado** (`ue1`)
+2. ✅ **Conexão real de UE** via srsUE + ZMQ
+3. ✅ **Teste de PING #1** (baseline antes da falha)
+4. ✅ **Reconexão automática do UE** após recuperação
+5. ✅ **Teste de PING #2** (validação pós-recuperação)
+6. ✅ **UE permanece conectado** para testes manuais
+
+### Fluxo Completo
+
+```
+Fase 1: SETUP
+├─ Limpar ambiente
+├─ Iniciar Core (5gc)
+├─ Iniciar CU
+├─ Iniciar DU
+├─ Criar namespace ue1
+└─ Conectar UE → PDU Session OK
+
+Fase 2: BASELINE
+└─ Ping UE → Core: 10.45.0.1 ✓
+
+Fase 3: FALHA
+└─ Kill CU container
+
+Fase 4: RECUPERAÇÃO
+├─ Swarm recria CU
+├─ Restart DU forçado
+└─ CU-AMF + DU-CU reconectados
+
+Fase 5: RECONEXÃO UE
+├─ Parar srsUE anterior
+├─ Reiniciar srsUE
+└─ Novo attach → IP pode mudar
+
+Fase 6: VALIDAÇÃO
+├─ Ping UE → Core: 10.45.0.1 ✓
+└─ Relatório final com status UE
+```
+
+### Informações do UE
+
+| Parâmetro | Valor |
+|-----------|-------|
+| IMSI | 001010123456780 |
+| K | 00112233445566778899aabbccddeeff |
+| OPC | 63BFA50EE6523365FF14C1F45F88737D |
+| APN | srsapn |
+| Banda | 3 (NR) |
+| ZMQ TX | tcp://*:2001 |
+| ZMQ RX | tcp://127.0.0.1:2000 |
+
+### Comandos Úteis
+
+```bash
+# Monitorar logs do UE em tempo real
+tail -f /tmp/ue_run.log
+
+# Ver IP atribuído ao UE
+sudo ip netns exec ue1 ip addr show tun_srsue
+
+# Testar ping manualmente
+sudo ip netns exec ue1 ping -c 4 10.45.0.1
+
+# Verificar rotas no namespace
+sudo ip netns exec ue1 ip route
+
+# Entrar no namespace para debug
+sudo ip netns exec ue1 bash
+
+# Capturar tráfego do UE
+sudo ip netns exec ue1 tcpdump -i tun_srsue -w /tmp/ue_capture.pcap
+
+# Verificar processos do srsUE
+ps aux | grep srsue
+```
+
+### Troubleshooting Específico
+
+#### ❓ UE não conecta
+
+1. Verificar porta ZMQ do DU:
+   ```bash
+   ss -tuln | grep 2000
+   # Esperado: 0.0.0.0:2000 LISTEN
+   ```
+
+2. Verificar subscriber cadastrado:
+   - Abrir http://localhost:9999
+   - Login: admin / admin
+   - Verificar IMSI: 001010123456780
+
+3. Ver últimas linhas do log:
+   ```bash
+   tail -50 /tmp/ue_run.log
+   ```
+
+#### ❓ Ping falha
+
+1. Verificar interface TUN existe:
+   ```bash
+   sudo ip netns exec ue1 ip link show tun_srsue
+   ```
+
+2. Verificar IP foi atribuído:
+   ```bash
+   sudo ip netns exec ue1 ip addr show tun_srsue
+   # Esperado: inet 10.45.x.x/24
+   ```
+
+3. Testar conectividade namespace ↔ host:
+   ```bash
+   sudo ip netns exec ue1 ping -c 2 10.45.254.1
+   ```
+
+#### ❓ "Namespace já existe"
+
+Limpar manualmente:
+```bash
+sudo ip netns del ue1
+sudo ip link del veth0
+```
+
+### Limpeza Manual
+
+Se precisar limpar o ambiente:
+
+```bash
+# Parar UE
+sudo pkill -f "srsue.*ue_zmq"
+
+# Remover namespace
+sudo ip netns del ue1
+
+# Remover veth
+sudo ip link del veth0 2>/dev/null
+
+# Remover stacks
+docker stack rm oran_cu oran_du
+
+# Parar Core (opcional)
+cd ../
+docker compose down 5gc
+```
+
+### UE Fica Conectado
+
+Se o teste passar, o UE permanece conectado:
+
+```
+✅ UE permanecerá conectado para testes adicionais.
+⚠️  Pressione Ctrl+C para parar o UE e limpar o ambiente
+
+# Você pode então executar testes manuais em outro terminal
+```
+
+Experimente:
+- Ping contínuo: `sudo ip netns exec ue1 ping 8.8.8.8`
+- iPerf: `sudo ip netns exec ue1 iperf3 -c <server>`
+- HTTP: `sudo ip netns exec ue1 curl http://example.com`
+
+**Quando terminar, pressione Ctrl+C** no terminal do script para limpeza automática.
 
 ## Links Úteis
 

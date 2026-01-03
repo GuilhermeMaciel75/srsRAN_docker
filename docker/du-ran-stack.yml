@@ -6,7 +6,7 @@ networks:
 
 services:  
   du:
-    image: guilhermemaciel75/ud:v0.0.11-metrics
+    image: guilhermemaciel75/ud:v0.0.18-enable-metrics
     ports:
       - target: 36421
         published: 36421
@@ -31,10 +31,14 @@ services:
     environment:
       E2_BIND_ADDR: "0.0.0.0" 
       F1AP_BIND_ADDR: "0.0.0.0"
-      RU_SDR_TX_PORT: "10.45.0.1"
-      RU_SDR_RX_PORT: "10.45.0.1"
+      NRU_BIND_ADDR: "0.0.0.0"
+      NRU_EXT_ADDR: "auto"
+      RU_SDR_TX_PORT: "172.17.0.1"   # Novo
+      RU_SDR_RX_PORT: "172.17.0.1"
       F1AP_CU_CP_ADDR: "oran_cu_cu"
       GNB_ID : "1"
+      METRICS_ADDR: "172.18.0.1" # IP do docker_gwbridge - acessível do container via gateway
+      METRICS_PORT: "55555"
          
 
     deploy:

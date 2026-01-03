@@ -4,10 +4,6 @@ f1ap:
   cu_cp_addr: $F1AP_CU_CP_ADDR
   bind_addr: $F1AP_BIND_ADDR
 
-nru:
-  bind_addr: $NRU_BIND_ADDR
-  ext_addr: $NRU_EXT_ADDR
-
 ru_sdr:
   device_driver: zmq
   device_args: tx_port=tcp://*:2000,rx_port=tcp://$RU_SDR_RX_PORT:2001,base_srate=11.52e6
@@ -34,14 +30,14 @@ cell_cfg:
 
 log:
   filename: /tmp/du.log
-  all_level: info                      # Mudar de warning para info
-  phy_level: info                      # Info para ver métricas PHY
-  mac_level: info                      # Info para ver métricas MAC
-  broadcast_enabled: true              # TRUE - Mostra PRACH e broadcasts
+  all_level: info
+  phy_level: info
+  mac_level: info
+  broadcast_enabled: true
 
-metrics:     
-  addr: $METRICS_ADDR
-  port: $METRICS_PORT
+metrics:
+  addr: 10.45.0.1
+  port: 55555
 
 pcap:
   mac_enable: false
@@ -58,3 +54,5 @@ e2:
   port: 36421
   e2sm_kpm_enabled: false
   e2sm_rc_enabled: false
+
+

@@ -19,12 +19,13 @@ cd /home/guilhermemaciel/Documentos/srsRAN/srsRAN_split/docker/teste_resiliencia
 
 ## 📦 Scripts Disponíveis
 
-| Script | Descrição |
-|--------|-----------|
-| `simular_falha_cu.sh` | **🆕 Simulador Automatizado** - Setup completo + Falha + Recuperação |
-| `resilience_test.sh` | V1 - Teste básico de failover CU/DU |
-| `resilience_test_v2.sh` | V2 - Com Service Health Check inteligente |
-| `resilience_test_v3.sh` | V3 - Com UE e validação de ping |
+| Script | Descrição | Requer Root |
+|--------|-----------|-------------|
+| `simular_falha_cu.sh` | **🆕 Simulador Automatizado** - Setup completo + Falha + Recuperação | ❌ Não |
+| `simular_falha_cu_com_ue.sh` | **🔥 Novo! Teste com UE Conectada** - Inclui UE real com testes de ping | ✅ Sim |
+| `resilience_test.sh` | V1 - Teste básico de failover CU/DU | ❌ Não |
+| `resilience_test_v2.sh` | V2 - Com Service Health Check inteligente | ❌ Não |
+| `resilience_test_v3.sh` | V3 - Com UE e validação de ping | ✅ Sim |
 
 ### ⭐ Novo: Simulador Automatizado (`simular_falha_cu.sh`)
 
@@ -37,13 +38,42 @@ Script completo para simular falha e recuperação da CU:
 - ✅ Reinício inteligente do DU para reconexão
 - ✅ Relatório completo com logs coloridos
 
-### 🎯 Recomendado para Testes E2E: V3 (`resilience_test_v3.sh`)
+**Uso:**
+```bash
+./simular_falha_cu.sh
+```
 
-O script V3 é o mais completo para validação end-to-end:
-- Conexão de UE real via srsUE
+### 🔥 Novíssimo: Teste com UE Conectada (`simular_falha_cu_com_ue.sh`)
+
+Script **mais completo** que simula falha com UE real conectada:
+- ✅ Tudo do script anterior (`simular_falha_cu.sh`)
+- ✅ Conexão de UE real via srsUE com interface ZMQ
+- ✅ Configuração automática de namespace de rede
+- ✅ Teste de ping ANTES da falha (baseline)
+- ✅ Reconexão automática do UE após recuperação
+- ✅ Teste de ping DEPOIS da recuperação (validação)
+- ✅ Validação completa do plano de dados end-to-end
+- ✅ Relatório detalhado incluindo status do UE
+
+**Uso:**
+```bash
+# Requer privilégios root para criar namespace e interface TUN
+sudo ./simular_falha_cu_com_ue.sh
+```
+
+**Pré-requisitos adicionais:**
+- srsRAN 4G compilado (para srsUE)
+- Caminho padrão: `/home/guilhermemaciel/Documentos/srsRAN/srsRAN_4G/build/srsue/src/srsue`
+- Edite a variável `SRSUE_PATH` no script se necessário
+
+### 🎯 Recomendado para Testes E2E: `simular_falha_cu_com_ue.sh`
+
+O novo script com UE é o mais completo para validação end-to-end:
+- Conexão de UE real via srsUE + ZMQ
 - Teste de ping antes da falha
 - Teste de ping após recuperação
 - Validação completa do plano de dados
+- UE permanece conectado após o teste para experimentação adicional
 
 ## 📋 Visão Geral
 
