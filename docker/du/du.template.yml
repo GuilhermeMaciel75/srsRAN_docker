@@ -38,8 +38,10 @@ log:
   phy_level: info                      # Info para ver métricas PHY
   mac_level: info                      # Info para ver métricas MAC
   broadcast_enabled: true              # TRUE - Mostra PRACH e broadcasts
+  metrics_level: info
 
 metrics:     
+  enable_json_metrics: true
   addr: $METRICS_ADDR
   port: $METRICS_PORT
 

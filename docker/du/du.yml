@@ -36,6 +36,7 @@ cell_cfg:
 log:
   filename: /tmp/du.log
   all_level: debug
+  metrics_level: info
 
 metrics:        
   addr: 172.18.0.1

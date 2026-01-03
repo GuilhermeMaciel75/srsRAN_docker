@@ -1,8 +1,8 @@
 import socket
 import json
 
-UDP_IP = "127.0.0.1"   # IP address to bind to (localhost in this case)
-UDP_PORT = 55555       # Port to bind to
+UDP_IP = "0.0.0.0"   # IP address to bind to (all interfaces)
+UDP_PORT = 55555     # Port to bind to
 
 # Create a UDP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
